@@ -113,13 +113,17 @@ public class TelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void EntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntrarActionPerformed
-        try{
-            ClienteController login = new ClienteController();
-            login.LoginUsuario(this);
-            this.setVisible(false);
-        }catch (SQLException sql){
-            
-        }
+        if (txtEmailLogin.getText().matches("") || txtSenhaLogin.getText().matches("")){
+            JOptionPane.showMessageDialog(rootPane, "Campos vazios");
+        }else{
+            try{
+                ClienteController login = new ClienteController();
+                login.LoginUsuario(this);
+                this.setVisible(false);
+            }catch (SQLException sql){
+
+            }
+        }        
     }//GEN-LAST:event_EntrarActionPerformed
 
     public JTextField getTxtEmailLogin() {

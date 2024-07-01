@@ -30,52 +30,96 @@ public class TelaMenu extends javax.swing.JFrame {
         goToCadastro = new javax.swing.JButton();
         goToProdutos = new javax.swing.JButton();
         goToAutores = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        goToLogin.setText("Login");
+        goToLogin.setIcon(new javax.swing.ImageIcon("C:\\Users\\lauro\\Downloads\\login_icon (2) (1).png")); // NOI18N
         goToLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goToLoginActionPerformed(evt);
             }
         });
 
-        goToCadastro.setText("Cadastro");
+        goToCadastro.setIcon(new javax.swing.ImageIcon("C:\\Users\\lauro\\Downloads\\log_6902373 (1).png")); // NOI18N
         goToCadastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goToCadastroActionPerformed(evt);
             }
         });
 
-        goToProdutos.setText("Produtos");
+        goToProdutos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/browser_3256782 (1).png"))); // NOI18N
+        goToProdutos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToProdutosActionPerformed(evt);
+            }
+        });
 
-        goToAutores.setText("Autores");
+        goToAutores.setIcon(new javax.swing.ImageIcon("C:\\Users\\lauro\\Downloads\\information-button_1176 (1).png")); // NOI18N
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 56)); // NOI18N
+        jLabel1.setText("MENU");
+
+        jLabel2.setText("Autores");
+
+        jLabel3.setText("Produtos");
+
+        jLabel4.setText("Cadastro");
+
+        jLabel5.setText("Login");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addComponent(goToLogin)
-                .addGap(49, 49, 49)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(goToCadastro)
-                .addGap(48, 48, 48)
+                .addGap(53, 53, 53)
                 .addComponent(goToProdutos)
-                .addGap(51, 51, 51)
+                .addGap(43, 43, 43)
                 .addComponent(goToAutores)
-                .addContainerGap(48, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(126, 126, 126)
+                .addComponent(jLabel3)
+                .addGap(116, 116, 116)
+                .addComponent(jLabel2)
+                .addGap(79, 79, 79))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(256, 256, 256)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(334, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(120, 120, 120)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(goToLogin)
+                    .addComponent(goToAutores)
                     .addComponent(goToCadastro)
-                    .addComponent(goToProdutos)
-                    .addComponent(goToAutores))
-                .addGap(26, 26, 26))
+                    .addComponent(goToProdutos))
+                .addGap(48, 48, 48))
         );
 
         pack();
@@ -92,6 +136,11 @@ public class TelaMenu extends javax.swing.JFrame {
         cadastro.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_goToCadastroActionPerformed
+
+    private void goToProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToProdutosActionPerformed
+        TelaProdutos produtos = new TelaProdutos();
+        produtos.setVisible(true);
+    }//GEN-LAST:event_goToProdutosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,5 +182,10 @@ public class TelaMenu extends javax.swing.JFrame {
     private javax.swing.JButton goToCadastro;
     private javax.swing.JButton goToLogin;
     private javax.swing.JButton goToProdutos;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

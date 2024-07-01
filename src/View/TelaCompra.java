@@ -110,7 +110,11 @@ public class TelaCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PedidoActionPerformed
-        JOptionPane.showMessageDialog(null, "Pedido feito com sucesso");
+        if(txtCidade.getText().matches("") || txtCep.getText().matches("") || txtEndereço.getText().matches("")){
+            JOptionPane.showMessageDialog(rootPane, "Campos vazios");
+        }else {
+            JOptionPane.showMessageDialog(null, "Pedido feito com sucesso");
+        }            
     }//GEN-LAST:event_PedidoActionPerformed
 
     /**
