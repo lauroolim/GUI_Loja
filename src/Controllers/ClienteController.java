@@ -4,6 +4,7 @@
  */
 package Controllers;
 import View.TelaCadastro;
+import View.TelaCompra;
 import View.TelaLogin;
 import model.Conexao;
 import java.sql.Connection;
@@ -24,5 +25,11 @@ public class ClienteController {
         Connection conexao = new Conexao().getConnection();
         ClienteDAO login = new ClienteDAO();
         login.login(view.getTxtEmailLogin().getText(), view.getTxtSenhaLogin().getText());
+    }
+    
+    public void CompraProd (TelaCompra view) throws SQLException{
+        Connection conexao = new Conexao().getConnection();
+        ClienteDAO compra = new ClienteDAO();
+        compra.compraProduto(view.getTxtEmail().getText());
     }
 }

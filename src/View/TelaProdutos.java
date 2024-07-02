@@ -4,6 +4,10 @@
  */
 package View;
 
+import Controllers.ClienteController;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -27,6 +31,7 @@ public class TelaProdutos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         marcaProduto = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
@@ -35,12 +40,15 @@ public class TelaProdutos extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         Compra = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Marca:");
 
-        marcaProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        marcaProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Sansumg", "Apple", "Xiaomi" }));
         marcaProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 marcaProdutoActionPerformed(evt);
@@ -49,9 +57,9 @@ public class TelaProdutos extends javax.swing.JFrame {
 
         jLabel2.setText("Modelo:");
 
-        modeloProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        modeloProduto.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "linha principal ", "linha alternativa", " " }));
 
-        salvaProduto.setText("Salvar");
+        salvaProduto.setText("Salvar no carrinho");
         salvaProduto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salvaProdutoActionPerformed(evt);
@@ -60,13 +68,21 @@ public class TelaProdutos extends javax.swing.JFrame {
 
         jMenu1.setText("Opções");
 
-        Compra.setText("Finalizar Compra");
+        Compra.setText("Menu");
         Compra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CompraActionPerformed(evt);
             }
         });
         jMenu1.add(Compra);
+
+        jMenuItem1.setText("Login");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
 
         jMenuBar1.add(jMenu1);
 
@@ -81,13 +97,13 @@ public class TelaProdutos extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(marcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(modeloProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51))
             .addGroup(layout.createSequentialGroup()
-                .addGap(145, 145, 145)
+                .addGap(141, 141, 141)
                 .addComponent(salvaProduto)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -100,9 +116,9 @@ public class TelaProdutos extends javax.swing.JFrame {
                     .addComponent(marcaProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(modeloProduto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 138, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
                 .addComponent(salvaProduto)
-                .addGap(65, 65, 65))
+                .addGap(60, 60, 60))
         );
 
         pack();
@@ -113,7 +129,9 @@ public class TelaProdutos extends javax.swing.JFrame {
     }//GEN-LAST:event_marcaProdutoActionPerformed
 
     private void CompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CompraActionPerformed
-        
+        TelaMenu menu = new TelaMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_CompraActionPerformed
 
     private void salvaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salvaProdutoActionPerformed
@@ -121,6 +139,12 @@ public class TelaProdutos extends javax.swing.JFrame {
         compra.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_salvaProdutoActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        TelaLogin login = new TelaLogin();
+        login.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -163,6 +187,8 @@ public class TelaProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JComboBox<String> marcaProduto;
     private javax.swing.JComboBox<String> modeloProduto;
     private javax.swing.JButton salvaProduto;

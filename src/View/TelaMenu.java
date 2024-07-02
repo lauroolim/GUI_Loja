@@ -60,6 +60,11 @@ public class TelaMenu extends javax.swing.JFrame {
         });
 
         goToAutores.setIcon(new javax.swing.ImageIcon("C:\\Users\\lauro\\Downloads\\information-button_1176 (1).png")); // NOI18N
+        goToAutores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToAutoresActionPerformed(evt);
+            }
+        });
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 56)); // NOI18N
@@ -140,7 +145,14 @@ public class TelaMenu extends javax.swing.JFrame {
     private void goToProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToProdutosActionPerformed
         TelaProdutos produtos = new TelaProdutos();
         produtos.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_goToProdutosActionPerformed
+
+    private void goToAutoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToAutoresActionPerformed
+        TelaAutores autores = new TelaAutores();
+        autores.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_goToAutoresActionPerformed
 
     /**
      * @param args the command line arguments

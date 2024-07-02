@@ -7,7 +7,7 @@ package model;
 
 /**
  *
- * @author lauro
+ * @author lauro e matheus 
  */
 public class Cliente {
     private String nome, telefone, email, senha, cpf;
